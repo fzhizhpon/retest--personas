@@ -1,0 +1,46 @@
+<nz-input-group [nzAddOnBefore]="grado" class="relative w-full">
+
+	<div class="relative w-full">
+		<input class="label-hidden" [disabled]="true" nz-input type="text" class="w-full">
+
+		<nz-select
+		class="w-full absolute top-0 left-0"
+		nzShowSearch
+		autocomplete="off"
+		[nzAllowClear]="allowClear"
+		[nzPlaceHolder]="tieneError ? labelError : placeholder"
+		[disabled]="isDisabled"
+		[ngModel]="value"
+		(ngModelChange)="change($event)"
+		[nzLoading]="isLoading"
+		style="width: 100%; border-top-left-radius: 0; border-bottom-left-radius: 0;">
+
+		<ng-container *ngIf="!isLoading">
+			<ng-container *ngFor="let parentesco of parentescos; let index = index">
+				<nz-option (click)="indexSelected = index" [nzValue]="parentesco.codigoParentesco" [nzLabel]="parentesco.nombre"></nz-option>
+			</ng-container>
+		</ng-container>
+
+		<nz-option *ngIf="isLoading" nzLabel="Cargando información..." [nzValue]="null" nzDisabled></nz-option>
+	</nz-select>
+	</div>
+
+</nz-input-group>
+
+<ng-template #grado>
+	<p class="m-0">
+		<ng-container *ngIf="value; else noValue">
+			<!-- <ng-container *ngIf="parentescos[indexSelected].gradoAfinidad !== null">
+
+			</ng-container>
+			<ng-container *ngIf="parentescos[indexSelected].gradoConsanguinidad !== null">
+
+			</ng-container> -->
+			 {{ parentescos[indexSelected].gradoAfinidad != 0 ? 'Afinidad ' + parentescos[indexSelected].gradoAfinidad : 'Consanguinidad ' + parentescos[indexSelected].gradoConsanguinidad }}
+		</ng-container>
+	</p>
+</ng-template>
+
+<ng-template #noValue>
+	####
+</ng-template>

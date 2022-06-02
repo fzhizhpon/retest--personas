@@ -1,0 +1,33 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/idioma/componentes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "micro-globalizacion",
+          "Port": 3000
+        }
+      ],
+      "UpstreamPathTemplate": "/idioma/componentes",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/idioma/mensajes",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "micro-globalizacion",
+          "Port": 3000
+        }
+      ],
+      "UpstreamPathTemplate": "/idioma/mensajes",
+      "UpstreamHttpMethod": [
+        "GET"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<div class="w-full display-block relative vs-table-container">
+	<table class="vs-table table vs-table-paginated w-full">
+		<ng-content></ng-content>
+	</table>
+
+	<ng-container *ngIf="data == null || data.length == 0">
+		<div class="w-full border-b-1 border-solid border-theme-bluegray-300 p-25">
+			<nz-empty
+				[nzNotFoundContent]="contentTpl"
+			>
+				<ng-template #contentTpl>
+					<span  lang langLabel="vs-tabla:sin-datos">
+					  Sin datos
+					</span>
+				</ng-template>
+			</nz-empty>
+		</div>
+	</ng-container>
+
+	<div *ngIf="showPagination" class="w-full justify-end vs-table-pagination flex items-center flex-no-wrap">
+		<button (click)="changeIndex(indexSelected - 1)" [disabled]="indexSelected < 1" class="m-5" nz-button
+				nzSize="small"><i nz-icon nzType="left" nzTheme="outline"></i></button>
+
+		<ng-container *ngFor="let el of [].constructor(totalPages); let i = index">
+			<button class="m-5"
+					(click)="changeIndex(i)"
+					nz-button
+					[nzType]="i == indexSelected ? 'primary' : 'default'"
+					nzSize="small">{{ i + 1 }}</button>
+		</ng-container>
+
+		<button (click)="changeIndex(indexSelected + 1)" [disabled]="indexSelected >= totalPages" class="m-5" nz-button
+				nzSize="small"><i nz-icon nzType="right" nzTheme="outline"></i></button>
+	</div>
+
+	<ng-container *ngIf="showLoading">
+		<div class="flex content-start justify-center vs-table-loading-indicator pt-50">
+			<div class="h-35 h-35 overflow-visible">
+				<nz-spin nzSimple nzSize="default"></nz-spin>
+			</div>
+			<p lang langLabel="vs-tabla:cargando" class="w-full display-block font-medium text-center m-0">Cargando</p>
+		</div>
+	</ng-container>
+
+</div>

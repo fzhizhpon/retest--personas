@@ -1,0 +1,101 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/micro-documentologia/api/Archivos/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9999
+        }
+      ],
+      "UpstreamPathTemplate": "/documentologia/archivos",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/micro-documentologia/api/Archivos/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9999
+        }
+      ],
+      "UpstreamPathTemplate": "/documentologia/archivos/{everything}",
+      "UpstreamHttpMethod": [
+        "Post",
+        "Delete",
+        "Get"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+
+
+
+
+    {
+      "DownstreamPathTemplate": "/micro-documentologia/api/Documentos/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9999
+        }
+      ],
+      "UpstreamPathTemplate": "/documentologia/documentos",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/micro-documentologia/api/Documentos/{codigoComponente}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9999
+        }
+      ],
+      "UpstreamPathTemplate": "/documentologia/documentos/{codigoComponente}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/micro-documentologia/api/Documentos/{codigoComponente}/{codigoTipoDocumento}/{codigoGrupo}/{codigoPersona}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9999
+        }
+      ],
+      "UpstreamPathTemplate": "/documentologia/documentos/{codigoComponente}/{codigoTipoDocumento}/{codigoGrupo}/{codigoPersona}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    }
+
+  ]
+}

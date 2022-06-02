@@ -1,0 +1,12 @@
+<ng-template #modalTitle>
+	<span lang langLabel="direccion:direccion">Dirección</span>
+</ng-template>
+
+<div style="height: 50rem;" class="grid-col-12">
+	<iframe *ngIf="latitud && longitud" class="w-full h-full"
+		[src]="sanitizeUrl('https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q='+longitud+',%20'+latitud+'+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed')"
+		frameborder="0"></iframe>
+
+		{{ latitud }} {{ longitud }}
+
+</div>

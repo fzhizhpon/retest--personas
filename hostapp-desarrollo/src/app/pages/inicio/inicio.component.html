@@ -1,0 +1,29 @@
+<div class="w-screen h-screen flex flex-no-wrap">
+	<app-menu-lateral style="z-index: 100;"></app-menu-lateral>
+
+	<div class="w-full h-full bg-white">
+		<app-cabecera [showNotifications]="false"></app-cabecera>
+
+		<div id="content" class="overflow-auto w-full" style="height: calc(100vh - 5.3rem);">
+
+			<div class="w-full p-25">
+				<div class="w-full grid">
+					<div class="grid-col-12 display-block text-center ">
+						<h1 lang langLabel="inicio-vima:inicio"
+							class=" font-black  m-0">¡Bienvenido</h1>
+						<h1 class="font-black text-theme-primary m-0">{{ infoUsuario.usuario }}</h1>
+						<h1 class=" font-black  m-0">!</h1>
+					</div>
+					<div class="overflow-auto grid-col-7 border-1 border-solid border-theme-bluegray-300 rounded">
+						<vs-panel-notificaciones></vs-panel-notificaciones>
+					</div>
+
+					<div class="grid-col-5">
+<!--						<img src="./assets/home.png" class="rounded-sm display-block w-full">-->
+						<vs-visualizar-imagen [codigoEspacio]="5" ></vs-visualizar-imagen>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

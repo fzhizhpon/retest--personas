@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CoopCrea.Cross.Cache" Version="1.1.0" />
+    <PackageReference Include="CoopCrea.Cross.Discovery" Version="1.0.2" />
+    <PackageReference Include="CoopCrea.Cross.Log" Version="1.0.0" />
+    <PackageReference Include="CoopCrea.Cross.Tracing" Version="1.0.0" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="nacos-sdk-csharp.Extensions.Configuration" Version="1.1.0" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.15.10" />
+    <PackageReference Include="OpenTracing.Contrib.NetCore" Version="0.8.0" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.4" />
+    <PackageReference Include="Vimasistem.BasicFiltering" Version="1.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Catalogo.Core\Catalogo.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Vimasistem.BasicFiltering" />
+  </ItemGroup>
+</Project>
