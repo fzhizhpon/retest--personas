@@ -22,7 +22,7 @@
     "@angular/router": "~12.2.0",
     "@swimlane/ngx-charts": "^20.1.0",
     "crypto-js": "^4.1.1",
-    "highcharts": "^10.0.0",
+    "highcharts": "^10.1.0",
     "ng-zorro-antd": "^12.1.0",
     "ng2-pdf-viewer": "^8.0.1",
     "rxjs": "~6.6.0",
